@@ -40,9 +40,7 @@ export const Input1 = ({placeHolderText, right, inputValue, onChangeText, onDone
                     blurOnSubmit={true}
                     onSubmitEditing={onDoneInput}
                 />
-                <Text style={[{textTransform: 'capitalize'}, style1.sent]}>
-                    {right}
-                </Text>
+                {right}
             </View>
         </Button>
     </View>
@@ -134,11 +132,6 @@ const style1 = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center'
-    },
-    sent: {
-        writingDirection: 'rtl',
-        color: '#F86790',
-        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Bold} : {fontWeight: '500'}
     },
     button: {
         flexDirection: 'row',
