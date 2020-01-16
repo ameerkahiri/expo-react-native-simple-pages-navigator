@@ -13,9 +13,7 @@ import NavigationService from '../NavigationService';
 
 const {width, height} = Dimensions.get('window');
 
-//-----------BUTTON1-------------//::PersonalInfo
-export const Button1 = ({name, btnFunction}) => (
-    <View style={style1.button_container}>
+
 //-----------BUTTON1-------------//::PersonalInfo --- PINK BUTTON
 export const PinkButton = ({name, btnFunction}) => (
     <View style={pink_Button.button_container}>
@@ -23,13 +21,13 @@ export const PinkButton = ({name, btnFunction}) => (
                 size="large" 
                 color="#F86790" 
                 onPress={() => Alert.alert(name)} 
-                style={style1.button}>{name}</Button>
-                style={pink_Button.button}>{name}</Button>
+                style={pink_Button.button}>{name}
+        </Button>
     </View>
     
 );
 
-const style1 = StyleSheet.create({
+const pink_Button = StyleSheet.create({
     button_container:{
         flex:1,
         alignItems: 'center',
