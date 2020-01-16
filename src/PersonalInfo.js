@@ -5,6 +5,7 @@ import Header from './component/header';
 import {List2} from './component/list';
 import {HeaderGap} from './component/gap';
 import {Button1} from './component/button';
+import {PinkButton} from './component/button';
 
 export default class PersonalInfo extends React.Component{
     render(){
@@ -23,6 +24,7 @@ export default class PersonalInfo extends React.Component{
                     <List2 left="Address" right=""/>
                     <HeaderGap/>
                     <Button1 name="Save"/>
+                    <PinkButton name="Save"/>
                 </ScrollView>
             </View>
         );

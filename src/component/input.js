@@ -11,6 +11,10 @@ import {
 import theme from '../utils/theme';
 import NavigationService from '../NavigationService';
 
+import DatePicker from 'react-native-datepicker';
+import moment from 'moment';
+
+
 const {width, height} = Dimensions.get('window');
 
 //-----------INPUT1-------------//::emailverification
@@ -44,13 +48,83 @@ export const Input1 = ({placeHolderText, right, inputValue, onChangeText, onDone
     </View>
 );
 
+
+//
+export const InputIdentity = ({placeHolder, inputValue, onChange, saveInput }) =>(
+    <View style={[{borderBottomColor: '#F0EFEF', borderBottomWidth: 1, marginBottom:8}]}>
+        <Text style={{color:"grey"}}>
+            {placeHolder}
+        </Text>
+
+        <TextInput 
+            style={[{fontWeight:'bold', textTransform: 'capitalize', padding:0, width:Dimensions.get('window').width}]}
+            value={inputValue}
+            onChangeText={onChange}
+            placeholder= {''}
+            placeholderTextColor="grey"
+            multiline={true}
+            autoCapitalize="sentences"
+            underlineColorAndroid="transparent"
+            selectionColor={'white'}
+            maxLength={30}
+            returnKeyType="done"
+            autoCorrect={false}
+            blurOnSubmit={true}
+            onSubmitEditing={saveInput}
+        />
+    </View>
+);
+
+export const InputDate = ({placeHolder, inputDate, onDateChange}) => (
+  
+
+    <View style={[{borderBottomColor: '#F0EFEF', flexDirection: 'row', borderBottomWidth: 1, marginBottom:8}]}>
+
+        <Text style={[{textTransform: 'capitalize', color:"grey", position:'absolute'}]}>
+                    {placeHolder}
+        </Text>
+    
+        <DatePicker
+            style={{flex:1}}
+            date={inputDate}
+            mode="date"
+            placeholder=" "
+            format="MMMM DD, YYYY"
+            minDate="1880-01-01"
+            maxDate={moment().format('MMMM DD, YYYY')}
+            confirmBtnText="Confirm"
+            cancelBtnText="Cancel"
+            customStyles={{
+                dateIcon: {
+                    position: 'absolute',
+                    right: 1,
+                    top: 4,
+                    marginLeft: 0,
+                },
+                dateInput: {
+                    position:'absolute',
+                    left:0,
+                    top:8,
+                    borderWidth:0,
+                    fontWeight:'bold'
+                }
+            }}
+            // onDateChange={(date) => {this.setState({date: date})}}
+            onDateChange = {onDateChange}
+        />
+    </View>
+);
+
+
+// css style
+
 const style1 = StyleSheet.create({
     container: {
         // paddingVertical:0,
-        marginHorizontal: 15,
+        // marginHorizontal: 15,
         borderBottomColor: '#F0EFEF',
         borderBottomWidth: 1,
-        // flexDirection: 'row',
+        flexDirection: 'row',
         // justifyContent: 'space-between'
     },
     text: {

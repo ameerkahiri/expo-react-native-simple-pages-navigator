@@ -46,6 +46,7 @@ export default class Settings extends React.Component{
                         <List1 name="Support"/>
                         <List1 name="About Us"/>
                         <List1 name="Rate Us"/>
+                        <List1 name="Rate Us" routeName="Identification"/>
                     </View>
                     {
                         winHeight <= 520 ? 

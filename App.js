@@ -6,6 +6,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import NavigationService from './src/NavigationService';
 import PersonalInfo from './src/PersonalInfo';
 import EmailVerification from './src/EmailVerification';
+import Identification from './src/Identification';
 import Theme from './src/utils/theme';
 import { View } from 'react-native';
 
@@ -14,6 +15,7 @@ const MainNavigator = createStackNavigator({
   Settings: {screen: Settings},
   PersonalInfo: {screen: PersonalInfo},
   EmailVerification: {screen: EmailVerification}
+  Identification: {screen: Identification}
 },{
   initialRouteName: "Home",
   header: null,

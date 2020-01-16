@@ -16,11 +16,15 @@ const {width, height} = Dimensions.get('window');
 //-----------BUTTON1-------------//::PersonalInfo
 export const Button1 = ({name, btnFunction}) => (
     <View style={style1.button_container}>
+//-----------BUTTON1-------------//::PersonalInfo --- PINK BUTTON
+export const PinkButton = ({name, btnFunction}) => (
+    <View style={pink_Button.button_container}>
         <Button round 
                 size="large" 
                 color="#F86790" 
                 onPress={() => Alert.alert(name)} 
                 style={style1.button}>{name}</Button>
+                style={pink_Button.button}>{name}</Button>
     </View>
     
 );

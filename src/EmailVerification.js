@@ -6,6 +6,7 @@ import {HeaderGap, ParaGap} from './component/gap';
 import {Title2} from './component/title';
 import {Input1} from './component/input';
 import {Button1, Button2} from './component/button';
+import {PinkButton, Button2} from './component/button';
 
 const {width : winWidth, height : winHeight} = Dimensions.get('window');
 
@@ -28,6 +29,7 @@ export default class EmailVerification extends React.Component {
                     <Input1 placeHolderText="Enter your email" right=""/>
                     <ParaGap/>
                     <Button1 name="Send Verification"/>
+                    <PinkButton name="Send Verification"/>
                     {
                         winHeight <= 520 ? 
                         <View style={[{alignItems:'center'}, styles.bottomNotFixed]}>
