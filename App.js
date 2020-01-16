@@ -14,7 +14,7 @@ const MainNavigator = createStackNavigator({
   Home: {screen: Home},
   Settings: {screen: Settings},
   PersonalInfo: {screen: PersonalInfo},
-  EmailVerification: {screen: EmailVerification}
+  EmailVerification: {screen: EmailVerification},
   Identification: {screen: Identification}
 },{
   initialRouteName: "Home",

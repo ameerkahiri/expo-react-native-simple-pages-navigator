@@ -12,3 +12,11 @@ export const HeaderGap = () => (
 export const ParaGap = () => (
     <Block style={{paddingTop:10}}></Block>
 );
+
+export const TitleGap = () => (
+    <Block style={{paddingTop:15}}></Block>
+);
+
+export const CustomGap = ({value}) => (
+    <Block style={{paddingTop: value}}></Block>
+);

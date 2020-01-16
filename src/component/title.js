@@ -37,3 +37,17 @@ const style2 = StyleSheet.create({
         fontSize:22
     }
 });
+
+//-----------TITLE3-------------//::Identification
+export const Title3 = ({name}) => (
+    <View style={{marginLeft: 15}}>
+        <Text style={{textTransform: 'capitalize'}, style3.text}>{name}</Text>
+    </View>
+);
+
+const style3 = StyleSheet.create({
+    text:{
+        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Medium} : {fontWeight: '500'},
+        fontSize: 20
+    }
+});

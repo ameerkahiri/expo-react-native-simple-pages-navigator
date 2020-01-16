@@ -23,7 +23,7 @@ export const Input1 = ({placeHolderText, right, inputValue, onChangeText, onDone
         <Button 
             style={style1.button} 
             color="transparent">
-            <View style={style1.text}>
+            <View style={style1.textContainer}>
                 <TextInput 
                     style={null}
                     value={inputValue}
@@ -46,6 +46,38 @@ export const Input1 = ({placeHolderText, right, inputValue, onChangeText, onDone
     </View>
 );
 
+const style1 = StyleSheet.create({
+    container: {
+        // paddingVertical:0,
+        marginHorizontal: 15,
+        borderBottomColor: '#F0EFEF',
+        borderBottomWidth: 1,
+        // flexDirection: 'row',
+        // justifyContent: 'space-between'
+    },
+    textContainer: {
+        width: 300,
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+    button: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%'
+    },
+    textBold: {
+        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Bold} : {fontWeight: 'Bold'},
+    },
+    textMedium: {
+        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Medium} : {fontWeight: '500'},
+    },
+    textRegular: {
+        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Regular} : {fontWeight: '0'},
+    }
+});
+
 
 //
 export const InputIdentity = ({placeHolder, inputValue, onChange, saveInput }) =>(
@@ -53,9 +85,9 @@ export const InputIdentity = ({placeHolder, inputValue, onChange, saveInput }) =
         <Text style={{color:"grey"}}>
             {placeHolder}
         </Text>
-
+    
         <TextInput 
-            style={[{fontWeight:'bold', textTransform: 'capitalize', padding:0, width:Dimensions.get('window').width}]}
+            style={[{textTransform: 'capitalize', padding:0, width},style1.textMedium]}
             value={inputValue}
             onChangeText={onChange}
             placeholder= {''}
@@ -76,14 +108,14 @@ export const InputIdentity = ({placeHolder, inputValue, onChange, saveInput }) =
 export const InputDate = ({placeHolder, inputDate, onDateChange}) => (
   
 
-    <View style={[{borderBottomColor: '#F0EFEF', flexDirection: 'row', borderBottomWidth: 1, marginBottom:8}]}>
+    <View style={[{borderBottomColor: '#F0EFEF', flexDirection: 'row', borderBottomWidth: 1, marginBottom:8, paddingBottom: 2}]}>
 
         <Text style={[{textTransform: 'capitalize', color:"grey", position:'absolute'}]}>
                     {placeHolder}
         </Text>
     
         <DatePicker
-            style={{flex:1}}
+            style={{flex:1, paddingTop:5}}
             date={inputDate}
             mode="date"
             placeholder=" "
@@ -103,8 +135,10 @@ export const InputDate = ({placeHolder, inputDate, onDateChange}) => (
                     position:'absolute',
                     left:0,
                     top:8,
-                    borderWidth:0,
-                    fontWeight:'bold'
+                    borderWidth:0
+                },
+                dateText: {
+                    fontFamily: theme.FONTFAMILY.Roboto_Medium
                 }
             }}
             // onDateChange={(date) => {this.setState({date: date})}}
@@ -112,30 +146,3 @@ export const InputDate = ({placeHolder, inputDate, onDateChange}) => (
         />
     </View>
 );
-
-
-// css style
-
-const style1 = StyleSheet.create({
-    container: {
-        // paddingVertical:0,
-        // marginHorizontal: 15,
-        borderBottomColor: '#F0EFEF',
-        borderBottomWidth: 1,
-        flexDirection: 'row',
-        // justifyContent: 'space-between'
-    },
-    text: {
-        width: 300,
-        justifyContent: 'center',
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-    },
-    button: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        width: '100%'
-    }
-});

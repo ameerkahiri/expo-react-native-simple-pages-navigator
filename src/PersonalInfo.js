@@ -16,7 +16,7 @@ export default class PersonalInfo extends React.Component{
                 </View>
                 <ScrollView>
                     <HeaderGap/>
-                    <List2 left="Identification" right=""/>
+                    <List2 left="Identification" right="" routeName="Identification"/>
                     <List2 left="Email" right="" capitalize={false} routeName="EmailVerification"/>
                     <List2 left="Mobile" right=""/>
                     <List2 left="Credit / Debit Card" right=""/>
