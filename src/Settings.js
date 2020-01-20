@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StatusBar, ScrollView, Dimensions} from 'react-native';
 import styles from './utils/style';
 import Header from './component/header';
-import {Title1} from './component/title';
+import {Title16} from './component/title';
 import {List1} from './component/list';
 import {HeaderGap} from './component/gap';
 
@@ -33,7 +33,7 @@ export default class Settings extends React.Component{
                 <ScrollView>
                     <HeaderGap/>
                     <View>
-                        <Title1 name="Account Settings"/>
+                        <Title16 name="Account Settings"/>
                         <List1 name="Personal information" routeName="PersonalInfo"/>
                         <List1 name="Change password"/>
                         <List1 name="Notifications"/>
@@ -42,7 +42,7 @@ export default class Settings extends React.Component{
                     </View>
                     <HeaderGap/>
                     <View>
-                        <Title1 name="Help Center"/>
+                        <Title16 name="Help Center"/>
                         <List1 name="Support"/>
                         <List1 name="About Us"/>
                         <List1 name="Rate Us"/>

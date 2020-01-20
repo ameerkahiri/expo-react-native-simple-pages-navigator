@@ -10,22 +10,39 @@ import {
 
 import theme from '../utils/theme';
 
-//-----------TITLE1-------------//::Settings
-export const Title1 = ({name}) => (
+//-----------TITLE16-------------//::Settings
+export const Title16 = ({name, bold=true}) => (
     <View style={{marginLeft: 15}}>
-        <Text style={{textTransform: 'capitalize'}, style1.text}>{name}</Text>
+        <Text style={{textTransform: 'capitalize'}, style1.text, (bold ? style1.bold : null)}>{name}</Text>
     </View>
 );
 
 const style1 = StyleSheet.create({
     text:{
-        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Bold} : {fontWeight: '500'},
+        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Medium} : {fontWeight: '500'},
         fontSize: theme.SIZES.FONT
+    },
+    bold: {
+        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Bold} : {fontWeight: '500'}
     }
 });
 
-//-----------TITLE2-------------//::EmailVerification
-export const Title2 = ({name}) => (
+//-----------Title20-------------//::Identification
+export const Title20 = ({name}) => (
+    <View style={{marginLeft: 15}}>
+        <Text style={{textTransform: 'capitalize'}, style3.text}>{name}</Text>
+    </View>
+);
+
+const style3 = StyleSheet.create({
+    text:{
+        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Medium} : {fontWeight: '500'},
+        fontSize: 20
+    }
+});
+
+//-----------Title22-------------//::EmailVerification
+export const Title22 = ({name}) => (
     <View style={{marginLeft: 15}}>
         <Text style={[{textTransform: 'capitalize'}, style2.text]}>{name}</Text>
     </View>
@@ -38,16 +55,19 @@ const style2 = StyleSheet.create({
     }
 });
 
-//-----------TITLE3-------------//::Identification
-export const Title3 = ({name}) => (
+
+//-----------TITLECustom-------------//::EmailVerification
+export const TitleCustom = ({name, fontsize, bold=true}) => (
     <View style={{marginLeft: 15}}>
-        <Text style={{textTransform: 'capitalize'}, style3.text}>{name}</Text>
+        <Text style={[{textTransform: 'capitalize', fontSize: fontsize}, stylec.text, (bold ? stylec.bold : null)]}>{name}</Text>
     </View>
 );
 
-const style3 = StyleSheet.create({
+const stylec = StyleSheet.create({
     text:{
-        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Medium} : {fontWeight: '500'},
-        fontSize: 20
+        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Medium} : {fontWeight: '500'}
+    },
+    bold: {
+        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Medium} : {fontWeight: '500'}
     }
 });

@@ -4,7 +4,7 @@ import Header from './component/header';
 import {InputIdentity, InputDate} from './component/input';
 import styles from './utils/style';
 import {PinkButton} from './component/button';
-import {Title3} from './component/title';
+import {Title20} from './component/title';
 import {HeaderGap, TitleGap, CustomGap} from './component/gap';
 // import SvgImageView from 'react-native-svg-img';
 
@@ -34,7 +34,7 @@ export default class Identification extends React.Component {
                 <ScrollView>
                     <View>
                         <HeaderGap/>
-                        <Title3 name="Review your details"/>
+                        <Title20 name="Review your details"/>
                         <TitleGap/>
                     </View>
 

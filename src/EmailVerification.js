@@ -3,7 +3,7 @@ import {View, Text, StatusBar, ScrollView, Dimensions, StyleSheet, AsyncStorage}
 import styles from './utils/style';
 import Header from './component/header';
 import {HeaderGap, ParaGap} from './component/gap';
-import {Title2} from './component/title';
+import {Title22} from './component/title';
 import {Input1} from './component/input';
 import {Button2} from './component/button';
 import theme from './utils/theme';
@@ -222,7 +222,7 @@ export default class EmailVerification extends React.Component {
                 </View>
                 <ScrollView>
                     <HeaderGap/>
-                    <Title2 name="Email Verification"/>
+                    <Title22 name="Email Verification"/>
                     <ParaGap/>
                     <View style={{marginHorizontal: 15}}>
                         <Text style={{color: "#0C2957"}}>Enter the email address you used when you joined and we'll send you a verification in the same email.</Text>
@@ -237,7 +237,7 @@ export default class EmailVerification extends React.Component {
                     {
                         winHeight <= 520 ?
                         <View style={[{alignItems:'center'}, styles.bottomNotFixed]}>
-                            <Button2 text="Why is this required?"/>
+                            <Button2 text="Why is this required?" routeName="WhyRequired"/>
                         </View> :
                         null
                     }
@@ -245,7 +245,7 @@ export default class EmailVerification extends React.Component {
                 {
                     winHeight > 520 ?
                     <View style={{alignItems:'center', position: 'relative', bottom: winHeight/8}}>
-                        <Button2 text="Why is this required?"/>
+                        <Button2 text="Why is this required?" routeName="WhyRequired"/>
                     </View> :
                     null
                 }

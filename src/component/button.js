@@ -15,12 +15,12 @@ const {width, height} = Dimensions.get('window');
 
 
 //-----------BUTTON1-------------//::PersonalInfo --- PINK BUTTON
-export const PinkButton = ({name, btnFunction}) => (
+export const PinkButton = ({name, btnFunction, routeName=null}) => (
     <View style={pink_Button.button_container}>
         <Button round 
                 size="large" 
                 color="#F86790" 
-                onPress={() => Alert.alert(name)} 
+                onPress={() => routeName ? NavigationService.navigate(routeName, {}) : Alert.alert(name)} 
                 style={pink_Button.button}>{name}
         </Button>
     </View>
@@ -47,12 +47,12 @@ const pink_Button = StyleSheet.create({
 });
 
 //-----------BUTTON2-------------//::emailverification
-export const Button2 = ({text, btnFunction}) => (
+export const Button2 = ({text, btnFunction, routeName=null}) => (
     <View style={style2.button_container}>
         <Button round 
                 size="large" 
                 color="transparent" 
-                onPress={() => Alert.alert(text)} 
+                onPress={() => routeName ? NavigationService.navigate(routeName, {}) : Alert.alert(text)} 
                 textStyle={{color: '#F86790'}}
                 style={style2.text}>
             {text}

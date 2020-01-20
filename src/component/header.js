@@ -25,6 +25,7 @@ const header = ({title, linebottom=true}) => (
             style={{ marginLeft: -10 }}
         />
         )}
+        titleStyle={styles.text}
         style={[(linebottom ? {borderBottomColor: '#F0EFEF',borderBottomWidth: 1} : null), (Platform.OS === 'android' ? { marginTop: theme.SIZES.BASE } : null)]}
     />
 );
@@ -40,9 +41,8 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap'
     },
     text: {
-        fontSize: 14,
         color: 'black',
-        fontWeight: '200'
+        ...Platform.OS === 'android' ? {fontFamily: theme.FONTFAMILY.Roboto_Medium} : {fontWeight: '500'},
     }
 });
 
