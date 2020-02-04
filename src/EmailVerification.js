@@ -141,18 +141,19 @@ export default class EmailVerification extends React.Component {
                     var diffTime = this.getDiff(start, exp);
                     // console.log(diffTime);
 
-                    if(diffTime > 0 && (diffTime !== null || diffTime !== NaN)){
-                        //set timer continue
-                        if(this._isMounted) this.setState({timer: diffTime});
-                        this.startTimer(true);
-                        // console.log('timer continue');
+                    if(diffTime !== null || diffTime !== NaN){
+                        if((diffTime > 0 && diffTime < 120)){
+                            //set timer continue
+                            if(this._isMounted) this.setState({timer: diffTime});
+                            this.startTimer(true);
+                            // console.log('timer continue');
+                        }
+                        else if((diffTime <= 0 || diffTime > 120)){
+                            if(this._isMounted) this.setState({ expired: '', disableBtn: false });
+                            this._storeData('EmailVerificationExp', '');
+                            // console.log('timer stop');
+                        }
                     }
-                    else if(diffTime <= 0 && (diffTime !== null || diffTime !== NaN)){
-                        if(this._isMounted) this.setState({ expired: '', disableBtn: false });
-                        this._storeData('EmailVerificationExp', '');
-                        // console.log('timer stop');
-                    }
-
                     // console.log('done_getContinueStat');
                 }
                 else{
